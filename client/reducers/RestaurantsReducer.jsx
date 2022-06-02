@@ -26,8 +26,8 @@ const RestaurantsReducer = (state = initialState, action) => {
           }
         }
       }
-      console.log('newCategories: ', newCategories);
-      console.log(restaurantsToBeDisplayed);
+      //console.log('newCategories: ', newCategories);
+      //console.log(restaurantsToBeDisplayed);
       return {
         ...state,
         categories: newCategories,
@@ -50,7 +50,7 @@ const RestaurantsReducer = (state = initialState, action) => {
       allRestaurants = state.allRestaurants;
 
       restaurantsToBeDisplayed = [];
-      console.log(checkCount);
+      //console.log(checkCount);
       if (checkCount === 0) {
         restaurantsToBeDisplayed = allRestaurants;
       } else {
@@ -73,7 +73,7 @@ const RestaurantsReducer = (state = initialState, action) => {
         
       }
       */
-      console.log('not display ', restaurantsToBeDisplayed);
+      //console.log('not display ', restaurantsToBeDisplayed);
       return {
         ...state,
         categories: newCategories,

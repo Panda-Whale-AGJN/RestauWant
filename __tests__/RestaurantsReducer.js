@@ -27,10 +27,10 @@ describe('Restaurants Reducer', () => {
   });
 
 
-  describe('GET_RESTAURANTS', () => {
+  describe('GET_RESTAURANT_DATA', () => {
     
     const action = {
-      type: 'GET_RESTAURANTS',
+      type: 'GET_RESTAURANT_DATA',
       payload: [
         {
           name: 'Ess A Bagel',
