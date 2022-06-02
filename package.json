@@ -24,7 +24,7 @@
   "jest": {
     "globalSetup": "./jest-setup.js",
     "globalTeardown": "./jest-teardown.js",
-    "testEnvironment": "jest-environment-jsdom",
+    "testEnvironment": "node",
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom/extend-expect"
     ]
@@ -60,20 +60,20 @@
     "redux-thunk": "^2.4.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.2",
-    "@babel/plugin-proposal-class-properties": "^7.17.12",
-    "@babel/plugin-transform-runtime": "^7.18.2",
-    "@babel/preset-env": "^7.18.2",
-    "@babel/preset-react": "^7.17.12",
-    "babel-jest": "^28.1.0",
-    "babel-loader": "^8.2.5",
-    "clean-webpack-plugin": "^4.0.0",
-    "css-loader": "^6.7.1",
-    "eslint": "^8.16.0",
-    "eslint-import-resolver-webpack": "^0.13.2",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.30.0",
-    "html-webpack-plugin": "^5.5.0",
+    "@babel/core": "7.18.2",
+    "@babel/plugin-proposal-class-properties": "7.17.12",
+    "@babel/plugin-transform-runtime": "7.18.2",
+    "@babel/preset-env": "7.18.2",
+    "@babel/preset-react": "7.17.12",
+    "babel-jest": "28.1.0",
+    "babel-loader": "8.2.5",
+    "clean-webpack-plugin": "4.0.0",
+    "css-loader": "6.7.1",
+    "eslint": "8.16.0",
+    "eslint-import-resolver-webpack": "0.13.2",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-react": "7.30.0",
+    "html-webpack-plugin": "5.5.0",
     "jest": "^28.1.0",
     "node-sass": "^7.0.1",
     "react-test-renderer": "^18.1.0",

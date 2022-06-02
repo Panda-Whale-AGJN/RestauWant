@@ -4,8 +4,8 @@ import * as types from '../actions/types.jsx';
 // case for the action: GET_USER_LOCATION -> updates the state to the action.payload longitude and latitude
 
 const initialState = {
-  longitude: -122.399972,
-  latitude: 37.786882,
+  longitude: 0,
+  latitude: 0,
   isLoggedIn: false,
 };
 

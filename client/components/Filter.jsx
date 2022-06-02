@@ -1,29 +1,19 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { setCategories } from '../actions/restaurantActionCreator.jsx';
-// import RestaurantsReducer from '../reducers/RestaurantsReducer.jsx'
-//import mongoose.model('Restaurant', restaurantSchema);
-// import from child components...
 
-class Filter extends Component {
+const Filter = props => {
   
-  constructor(props) {
-    super();
-    this.onCheckboxChange = this.onCheckboxChange.bind(this);
-  }
+  const { category, checked, setCategories } = props;
 
-  onCheckboxChange(event) {
-    this.props.setCategories(event.target.name, event.target.checked);
-  }
+  const onCheckboxChange = e => {
+    setCategories(e.target.name, e.target.checked);
+  };
 
-  render() {
-    return (
-      <li className="ui checkbox" style={{ display: 'inline-block', width: '33.3333%'}}>
-        <input type="checkbox" name={this.props.category} onChange={ this.onCheckboxChange } checked={this.props.value}/>
-        <label htmlFor={this.props.category}>{this.props.category}</label>
-      </li>
-    );
-  }
-}
+  return (
+    <li className="ui checkbox" style={{ display: 'inline-block', width: '33.3333%'}}>
+      <input type="checkbox" name={category} onChange={ onCheckboxChange } checked={checked}/>
+      <label htmlFor={category}>{category}</label>
+    </li>  
+  );
+};
 
-export default connect(null, { setCategories })(Filter);
+export default Filter;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 // import from child components...
 
 const mapStateToProps = state => ({
@@ -13,13 +12,10 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-const checkLoginInfo = async () => {
-  const response = await axios.get('/');
-  // .then((res) => {
-  //   return response;
-  // })
-  // .catch((err) => console.log(err));
-};
+// const checkLoginInfo = async () => {
+//   const response = await axios.get('/');
+//   return response;
+// };
 
 let usernameInput;
 function usernameData (e) {
@@ -35,22 +31,20 @@ function passwordData (e) {
   return passwordInput;
 }
 
-class LoginContainer extends Component {
+const LoginContainer = props => {
   
+  return (
+    <div>
+      <input id="username" placeholder="username" onChange= { usernameData } required></input>
+      <br></br><br></br>
+      <input id="password" placeholder="password" onChange= { passwordData }></input>
+      <br></br><br></br>
+      <Link id="signUpButton" to="/api/signup"> Sign up </Link>
+      <br></br><br></br>
+      <button id="loginButton" onClick={() => console.log( 'this will check if user is logged in' ) }> Login </button>
+      <Outlet/>
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div>
-        <input id="username" placeholder="username" onChange= { usernameData } required></input>
-        <br></br><br></br>
-        <input id="password" placeholder="password" onChange= { passwordData }></input>
-        <br></br><br></br>
-        <Link id="signUpButton" to="/api/signup"> Sign up </Link>
-        <br></br><br></br>
-        <button id="loginButton" onClick={() => console.log( this.props ) }> Login </button>
-      </div>
-    );
-  }
-}
-
-export default LoginContainer;
+export default connect (mapStateToProps, mapDispatchToProps)(LoginContainer);

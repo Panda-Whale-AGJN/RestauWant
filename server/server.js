@@ -18,14 +18,15 @@ const util = require('util');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const partials = require('express-partials');
+// const { default: Restaurant } = require('./client/components/Restaurant');
 
-mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  dbName: 'ResturantDb'
-})
-  .then(() => console.log('Connected to Mongo DB.'))
-  .catch(err => console.log(err));
+// mongoose.connect(MONGO_URI, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   dbName: 'ResturantDb'
+// })
+//   .then(() => console.log('Connected to Mongo DB.'))
+//   .catch(err => console.log(err));
 
 app.use(express.json());
 

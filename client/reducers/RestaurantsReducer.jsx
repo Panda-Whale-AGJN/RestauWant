@@ -4,7 +4,7 @@ import * as types from '../actions/types.jsx';
 const initialState = {
   restaurantsToBeDisplayed: [],
   allRestaurants: [],
-  categories: {},
+  categories: {}, // {'namesofcategory': 'boolean'}
   checkCount: 0
 };
 
@@ -12,7 +12,7 @@ const RestaurantsReducer = (state = initialState, action) => {
   let newCategories, restaurantsToBeDisplayed, allRestaurants, checkCount;
 
   switch (action.type) {
-    case types.GET_RESTAURANTS:
+    case types.GET_RESTAURANT_DATA:
       restaurantsToBeDisplayed = action.payload;
       
       newCategories = {};
@@ -34,8 +34,9 @@ const RestaurantsReducer = (state = initialState, action) => {
         restaurantsToBeDisplayed: restaurantsToBeDisplayed,
         allRestaurants: restaurantsToBeDisplayed,
       };
-    
+      
     case types.SET_CATEGORIES:
+
       newCategories = { ... state.categories };
       newCategories[action.payload.name] = action.payload.checked;
 

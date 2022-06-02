@@ -1,10 +1,11 @@
 const Restaurant = require('../models/restaurantModel');
 const fetch = require('node-fetch');
+const axios = require('axios');
 
 const restaurantController = {};
 
 //Asynchronous put request to the database which returns the new Restaurant document
-restaurantController.searchApi = (req, res, next) => {
+restaurantController.searchApi = async (req, res, next) => {
   console.log('Entered the searchApi method within restaurantController');
   // console.log('req.query.term ', req.query.term);
   // console.log('req.query.latitude', req.query.latitude);
@@ -22,19 +23,18 @@ restaurantController.searchApi = (req, res, next) => {
   const url = `https://api.yelp.com/v3/businesses/search?${searchTerms}`;
   
 
-  console.log(req.query);
-  console.log('url ', url);
-  //Query the yelp API using a fetch request
+  // console.log(req.query);
+  // console.log('url in back-end', url);
   fetch(url, {
     headers: {
-      'Authorization': 'Bearer tDSCrb4Pqxqnh_b7UQ_XTWjmuBww3FMpQSTkqTEkR67zcr2xAFSZl9Pa-WDNGCRQ-HB2CzuxtYgFjIYLuCt_QXGO1aLtCgawaCuyRJ_TTyQOI2srIAE0-mQUajmSYnYx'
+      'Authorization': 'Bearer CdX7wb1lB-Qxd_7HJJv_biFHZ2eruwaKhD4ZM1XGwTQNrw67qWKNaMoMrs-ldzkeQMeYebVLMMf5x2IFIbLaLUlqvu5S9dRiit_7nxTTRR1S0224bS17YaLPe9iYYnYx'
     }
   })
 
     // Parse the returned data into a JS object
     .then((rawData) => rawData.json())
     .then((data) => {
-      console.log('Received data back from the Yelp API');
+      // console.log('Received data back from the Yelp API');
       res.locals.yelpResults = [];
       //Iterate over the business property on the object and push the first 5 results into res.locals
       let i = 0;
@@ -49,7 +49,7 @@ restaurantController.searchApi = (req, res, next) => {
       */
       return next();
     });  
-};
+};  
 
 //TO WHOMEVER IT MAY CONCERN (MEANING ITERATION GROUP), YOU PROBABLY WANT TO ADD TRY CATCH BLOCKS HERE
 //Asynchronous put request to the database which returns the new Restaurant document
