@@ -1,4 +1,4 @@
-import subject from '../client/reducers/RestaurantsReducer';
+import subject from '../client/reducers/RestaurantsReducer.jsx';
 
 
 describe('Restaurants Reducer', () => {

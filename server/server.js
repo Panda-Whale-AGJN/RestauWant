@@ -6,11 +6,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const userController = require('./controllers/userController');
 const restaurantController = require('./controllers/restaurantController');
-<<<<<<< HEAD
-const MONGO_URI = 'mongodb+srv://iteration:project01@iteration.6rbhg.mongodb.net/?retryWrites=true&w=majority';
-=======
 const MONGO_URI = 'mongodb+srv://gar12344:Pokemon0258631@cluster0.i3sqoka.mongodb.net/?retryWrites=true&w=majority';
->>>>>>> 0e06a5e7118704d588c86eede19c94d91b611375
 
 const passport = require('passport');
 const GitHubStrategy = require('passport-github2').Strategy;

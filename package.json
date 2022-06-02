@@ -30,12 +30,9 @@
     ]
   },
   "dependencies": {
-<<<<<<< HEAD
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-=======
     "axios": "^0.27.2",
->>>>>>> 0e06a5e7118704d588c86eede19c94d91b611375
     "body-parser": "^1.20.0",
     "concurrently": "^7.2.1",
     "dotenv": "^16.0.1",
@@ -56,11 +53,8 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-redux": "^8.0.2",
-<<<<<<< HEAD
     "react-test-utils": "^0.0.1",
-=======
     "react-router-dom": "^6.3.0",
->>>>>>> 0e06a5e7118704d588c86eede19c94d91b611375
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1"
   },
