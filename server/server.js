@@ -6,7 +6,8 @@ const path = require('path');
 const mongoose = require('mongoose');
 const userController = require('./controllers/userController');
 const restaurantController = require('./controllers/restaurantController');
-const MONGO_URI = 'mongodb+srv://gar12344:Pokemon0258631@cluster0.i3sqoka.mongodb.net/?retryWrites=true&w=majority';
+const MONGO_URI = 'mongodb+srv://iteration:project01@iteration.6rbhg.mongodb.net/?retryWrites=true&w=majority';
+//const MONGO_URI = 'mongodb+srv://gar12344:Pokemon0258631@cluster0.i3sqoka.mongodb.net/?retryWrites=true&w=majority';
 
 const passport = require('passport');
 const GitHubStrategy = require('passport-github2').Strategy;
@@ -276,4 +277,4 @@ Accept: application/json
 }
 */
 
-module.exports = server
+module.exports = server;
