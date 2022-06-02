@@ -1,15 +1,21 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import userEvent from '@testing-library/user-event';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import regeneratorRuntime from 'regenerator-runtime';
 
 //import App from '../client/App.jsx';
 import store from '../client/store.jsx';
+
+//all rendered by app
 import MainContainer from '../client/containers/MainContainer.jsx';
 import LoginContainer from '../client/containers/LoginContainer.jsx';
 import SignUpContainer from '../client/containers/SignUpContainer.jsx';
+
+//rendered by main container (which also renders restaurant display)
 import Search from '../client/components/Search.jsx';
+
+//rendered by restaurant display
 import Restaurant from '../client/components/Restaurant.jsx';
 import Filter from '../client/components/Filter.jsx';
 
@@ -29,10 +35,13 @@ describe('unit testing react components', () => {
 
     it('should display an Image, Restaurant Name, Address, Price, and Rating', () => {
       component = render(<Restaurant {...props} />);
-      const propsEntries = Object.values(props);
-      for(let i = 0; i < propsEntries.length; i++){
-        expect(component.getByText(propsEntries[i])).toBeInstanceOf(Node); //from testing approach lecture
-      }
+      //check that all props are displayed
+
+
+      // const propsEntries = Object.values(props);
+      // for(let i = 0; i < propsEntries.length; i++){
+      //    expect(component.getByText(propsEntries[i])).toBeInstanceOf(Node); //from testing approach lecture
+      // }
 
     
     });
@@ -42,7 +51,28 @@ describe('unit testing react components', () => {
       
   describe('Filter', () => {
 
-    it('', () => {});
+    const props = {
+      category: 'Pizza',
+      checked: false,
+      setCategories: jest.fn(),
+    };
+
+    beforeEach(() => {
+      component = render(<Filter {...props} />);
+    });
+
+    it('displays a checkbox and category name', () => {
+      
+    });
+
+    it('changes checked property (of html input) value to true when checkbox is clicked', () => {
+
+    });
+
+    it('calls setCategories when checkbox is clicked', () => {
+    //   fireEvent.change(screen.getByRole('checkbox'));
+    //   expect(props.setCategories).toHaveBeenCalledTimes(1);
+    });
 
   });
 

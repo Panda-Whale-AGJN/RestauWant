@@ -24,7 +24,7 @@
   "jest": {
     "globalSetup": "./jest-setup.js",
     "globalTeardown": "./jest-teardown.js",
-    "testEnvironment": "node",
+    "testEnvironment": "jest-environment-jsdom",
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom/extend-expect"
     ]
